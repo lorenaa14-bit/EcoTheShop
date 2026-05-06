@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>EcoTheShop — Proyecto Final</title>
+  <title>EcoTechShop — Proyecto Final | Lorena Murcia</title>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet"/>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -16,6 +16,7 @@
       --gold: #b8965a;
       --muted: #6b6b5e;
       --border: #d8d2c8;
+      --blue: #2a4a7a;
     }
 
     html { scroll-behavior: smooth; }
@@ -34,19 +35,19 @@
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       display: flex; justify-content: space-between; align-items: center;
       padding: 1.4rem 4rem;
-      background: rgba(248,245,240,0.92);
+      background: rgba(248,245,240,0.94);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border);
       animation: fadeDown .8s ease both;
     }
     .nav-logo {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.4rem; font-weight: 600; letter-spacing: .12em;
+      font-size: 1.3rem; font-weight: 600; letter-spacing: .1em;
       color: var(--green); text-transform: uppercase; text-decoration: none;
     }
-    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
     .nav-links a {
-      font-size: .78rem; letter-spacing: .18em; text-transform: uppercase;
+      font-size: .75rem; letter-spacing: .15em; text-transform: uppercase;
       color: var(--muted); text-decoration: none; transition: color .3s;
     }
     .nav-links a:hover { color: var(--green); }
@@ -57,41 +58,53 @@
       display: grid; place-items: center; text-align: center;
       padding: 8rem 2rem 4rem;
       position: relative; overflow: hidden;
+      background: linear-gradient(160deg, #f8f5f0 60%, #e8f0e8 100%);
     }
     .hero::before {
       content: '';
       position: absolute; inset: 0;
-      background:
-        radial-gradient(ellipse 70% 60% at 50% 30%, rgba(45,74,45,.08) 0%, transparent 70%),
-        url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%232d4a2d' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%232d4a2d' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
       pointer-events: none;
     }
-    .hero-tag {
-      font-size: .72rem; letter-spacing: .3em; text-transform: uppercase;
-      color: var(--gold); margin-bottom: 1.5rem;
+    .hero-badge {
+      display: inline-block;
+      font-size: .68rem; letter-spacing: .25em; text-transform: uppercase;
+      color: var(--gold); border: 1px solid rgba(184,150,90,.4);
+      padding: .4rem 1.2rem; border-radius: 2px; margin-bottom: 1.8rem;
       animation: fadeUp .9s .2s ease both;
     }
     .hero h1 {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(3.5rem, 8vw, 7rem);
+      font-size: clamp(3.2rem, 8vw, 6.5rem);
       font-weight: 300; line-height: 1.05;
-      letter-spacing: -.01em; color: var(--dark);
+      color: var(--dark);
       animation: fadeUp .9s .35s ease both;
     }
     .hero h1 em { font-style: italic; color: var(--green); }
-    .hero-sub {
-      margin-top: 1.8rem; font-size: 1rem; color: var(--muted);
-      max-width: 520px; margin-inline: auto;
-      animation: fadeUp .9s .5s ease both;
+    .hero-author {
+      margin-top: 1rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem; font-style: italic; color: var(--muted);
+      animation: fadeUp .9s .45s ease both;
     }
+    .hero-meta {
+      display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap;
+      margin-top: 1.8rem;
+      animation: fadeUp .9s .55s ease both;
+    }
+    .hero-meta-item {
+      font-size: .75rem; letter-spacing: .15em; text-transform: uppercase;
+      color: var(--muted);
+    }
+    .hero-meta-item span { display: block; color: var(--green); font-weight: 500; margin-top: .2rem; }
     .hero-btns {
       display: flex; gap: 1rem; justify-content: center;
-      margin-top: 2.8rem; flex-wrap: wrap;
+      margin-top: 2.5rem; flex-wrap: wrap;
       animation: fadeUp .9s .65s ease both;
     }
     .btn {
       display: inline-block; padding: .85rem 2.2rem;
-      font-family: 'Jost', sans-serif; font-size: .78rem;
+      font-family: 'Jost', sans-serif; font-size: .75rem;
       letter-spacing: .18em; text-transform: uppercase;
       text-decoration: none; border-radius: 2px;
       transition: all .3s ease; cursor: pointer; border: none;
@@ -107,10 +120,7 @@
       font-size: .65rem; letter-spacing: .2em; text-transform: uppercase; color: var(--muted);
       animation: fadeUp .9s .8s ease both;
     }
-    .scroll-line {
-      width: 1px; height: 48px; background: var(--border);
-      position: relative; overflow: hidden;
-    }
+    .scroll-line { width: 1px; height: 48px; background: var(--border); position: relative; overflow: hidden; }
     .scroll-line::after {
       content: ''; position: absolute; top: -100%; left: 0;
       width: 100%; height: 100%; background: var(--gold);
@@ -126,72 +136,117 @@
     }
     .section-title {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 300;
+      font-size: clamp(2rem, 4vw, 3rem); font-weight: 300;
       line-height: 1.15; margin-bottom: 1.8rem;
     }
     .section-title em { font-style: italic; color: var(--green); }
-    .divider {
-      width: 48px; height: 1px; background: var(--gold); margin-bottom: 2.5rem;
-    }
+    .divider { width: 48px; height: 1px; background: var(--gold); margin-bottom: 2.5rem; }
 
-    /* ── ABOUT ── */
+    /* ── SOBRE EL PROYECTO ── */
     #sobre { background: #fff; }
-    .about-grid {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center;
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+    .about-text p { color: var(--muted); margin-bottom: 1.2rem; font-size: .95rem; line-height: 1.8; }
+    .about-text strong { color: var(--dark); font-weight: 500; }
+    .team-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.5rem; }
+    .team-card {
+      padding: 1.2rem; border: 1px solid var(--border); border-radius: 2px;
+      background: var(--cream);
     }
-    .about-text p { color: var(--muted); margin-bottom: 1.2rem; font-size: .95rem; }
-    .about-visual {
-      position: relative; height: 380px;
-      background: var(--green); border-radius: 2px;
-      display: flex; align-items: center; justify-content: center;
-      overflow: hidden;
-    }
-    .about-visual::before {
-      content: ''; position: absolute; inset: 0;
-      background: linear-gradient(135deg, rgba(184,150,90,.3) 0%, transparent 60%);
-    }
-    .about-visual-icon {
-      font-size: 5rem; opacity: .25; filter: grayscale(1);
-    }
-    .about-visual-text {
-      position: absolute; bottom: 2rem; left: 2rem;
-      font-family: 'Cormorant Garamond', serif; font-size: 1.8rem;
-      color: rgba(255,255,255,.8); font-style: italic;
-    }
+    .team-card-icon { font-size: 1.4rem; margin-bottom: .5rem; }
+    .team-card-title { font-size: .8rem; font-weight: 500; color: var(--dark); margin-bottom: .3rem; }
+    .team-card-desc { font-size: .75rem; color: var(--muted); }
 
-    /* ── FEATURES / OBJETIVOS ── */
-    #objetivos { background: var(--cream); }
-    .features-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 1rem;
-    }
-    .feature-card {
-      padding: 2.5rem 2rem; border: 1px solid var(--border); border-radius: 2px;
-      background: #fff; transition: transform .3s, box-shadow .3s;
+    /* ── INFRAESTRUCTURA ── */
+    #infra { background: var(--cream); }
+    .infra-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+    .infra-diagram {
+      background: var(--dark); border-radius: 6px; padding: 2.5rem;
       position: relative; overflow: hidden;
     }
-    .feature-card::after {
-      content: ''; position: absolute; bottom: 0; left: 0;
-      width: 100%; height: 3px; background: var(--green);
-      transform: scaleX(0); transform-origin: left;
-      transition: transform .4s ease;
+    .infra-diagram::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 30% 30%, rgba(45,74,45,.3), transparent 70%);
     }
-    .feature-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,.08); }
-    .feature-card:hover::after { transform: scaleX(1); }
-    .feature-icon { font-size: 1.8rem; margin-bottom: 1.2rem; }
-    .feature-title {
-      font-family: 'Cormorant Garamond', serif; font-size: 1.25rem;
-      font-weight: 600; margin-bottom: .7rem; color: var(--dark);
+    .diagram-title {
+      font-family: 'Cormorant Garamond', serif; font-size: 1rem;
+      color: rgba(255,255,255,.5); letter-spacing: .15em; text-transform: uppercase;
+      margin-bottom: 2rem; position: relative;
     }
-    .feature-desc { font-size: .88rem; color: var(--muted); }
+    .diagram-nodes { display: flex; flex-direction: column; gap: 1rem; position: relative; }
+    .diagram-node {
+      display: flex; align-items: center; gap: 1rem;
+      padding: .9rem 1.2rem; border-radius: 4px;
+      background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.08);
+      position: relative;
+    }
+    .diagram-node-icon { font-size: 1.4rem; }
+    .diagram-node-info {}
+    .diagram-node-name { font-size: .85rem; color: #fff; font-weight: 500; }
+    .diagram-node-ip { font-size: .7rem; color: var(--gold); font-family: monospace; }
+    .diagram-arrow {
+      text-align: center; color: rgba(255,255,255,.2); font-size: .8rem;
+      margin: -.3rem 0; letter-spacing: .1em;
+    }
+    .hardware-list { list-style: none; }
+    .hardware-list li {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: .9rem 0; border-bottom: 1px solid var(--border);
+      font-size: .9rem;
+    }
+    .hardware-list li:last-child { border-bottom: none; }
+    .hw-name { color: var(--dark); }
+    .hw-price { color: var(--gold); font-weight: 500; font-size: .85rem; }
+    .hw-total {
+      display: flex; justify-content: space-between;
+      padding: 1rem; background: var(--green); border-radius: 2px;
+      color: #fff; font-weight: 500; margin-top: 1rem;
+    }
 
-    /* ── WEB ── */
+    /* ── OBJETIVOS ── */
+    #objetivos { background: #fff; }
+    .obj-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+    .obj-card {
+      padding: 2rem; border: 1px solid var(--border); border-radius: 2px;
+      position: relative; overflow: hidden; transition: transform .3s, box-shadow .3s;
+    }
+    .obj-card::after {
+      content: ''; position: absolute; bottom: 0; left: 0;
+      width: 100%; height: 3px; background: var(--gold);
+      transform: scaleX(0); transform-origin: left; transition: transform .4s;
+    }
+    .obj-card:hover { transform: translateY(-3px); box-shadow: 0 10px 32px rgba(0,0,0,.07); }
+    .obj-card:hover::after { transform: scaleX(1); }
+    .obj-num {
+      font-size: .65rem; letter-spacing: .25em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: .8rem;
+    }
+    .obj-title { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 600; margin-bottom: .6rem; }
+    .obj-desc { font-size: .85rem; color: var(--muted); }
+
+    /* ── LA WEB ── */
     #web { background: var(--dark); color: var(--cream); }
     #web .section-title { color: var(--cream); }
-    #web .section-label { color: var(--gold); }
-    .web-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
-    .web-desc { color: rgba(248,245,240,.65); font-size: .95rem; }
+    .web-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+    .web-desc { color: rgba(248,245,240,.65); font-size: .92rem; }
     .web-desc p { margin-bottom: 1.2rem; }
-    .web-mockup {
+    .web-url-box {
+      background: rgba(184,150,90,.12); border: 1px solid rgba(184,150,90,.3);
+      border-radius: 4px; padding: 1rem 1.5rem; margin-bottom: 1.5rem;
+      display: flex; align-items: center; gap: .8rem;
+    }
+    .web-url-box a {
+      font-family: monospace; font-size: .9rem; color: var(--gold);
+      text-decoration: none; letter-spacing: .05em;
+    }
+    .web-url-box a:hover { text-decoration: underline; }
+    .web-url-icon { font-size: 1.2rem; }
+    .tech-tags { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: 1.8rem; }
+    .tech-tag {
+      font-size: .68rem; letter-spacing: .12em; text-transform: uppercase;
+      padding: .35rem .9rem; border: 1px solid rgba(184,150,90,.4); border-radius: 2px;
+      color: var(--gold);
+    }
+    .mockup {
       background: #2a2a22; border-radius: 8px; overflow: hidden;
       box-shadow: 0 32px 80px rgba(0,0,0,.5); border: 1px solid rgba(255,255,255,.06);
     }
@@ -203,74 +258,59 @@
     .mockup-dot:nth-child(1) { background: #ff5f57; }
     .mockup-dot:nth-child(2) { background: #febc2e; }
     .mockup-dot:nth-child(3) { background: #28c840; }
-    .mockup-url {
+    .mockup-url-bar {
       flex: 1; background: #2a2a22; border-radius: 4px;
-      padding: .25rem .8rem; font-size: .7rem; color: rgba(255,255,255,.3);
+      padding: .25rem .8rem; font-size: .7rem; color: rgba(255,255,255,.35);
       margin-left: .5rem; font-family: monospace;
     }
-    .mockup-body { padding: 1.5rem; min-height: 260px; }
+    .mockup-body { padding: 1.5rem; }
     .mockup-hero-sim {
-      background: var(--green); border-radius: 4px; padding: 2rem;
-      text-align: center; margin-bottom: 1rem;
+      background: linear-gradient(135deg, #2d4a2d, #4a7c4a);
+      border-radius: 4px; padding: 1.5rem; text-align: center; margin-bottom: 1rem;
     }
-    .mockup-hero-sim h3 {
-      font-family: 'Cormorant Garamond', serif; font-size: 1.4rem;
-      color: #fff; margin-bottom: .5rem;
-    }
-    .mockup-hero-sim p { font-size: .72rem; color: rgba(255,255,255,.7); }
-    .mockup-products {
-      display: grid; grid-template-columns: repeat(3,1fr); gap: .6rem;
-    }
-    .mockup-product {
-      background: rgba(255,255,255,.04); border-radius: 3px;
-      padding: .8rem; text-align: center;
-    }
+    .mockup-hero-sim h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; color: #fff; }
+    .mockup-hero-sim p { font-size: .7rem; color: rgba(255,255,255,.7); margin-top: .3rem; }
+    .mockup-products { display: grid; grid-template-columns: repeat(3,1fr); gap: .6rem; }
+    .mockup-product { background: rgba(255,255,255,.04); border-radius: 3px; padding: .8rem; text-align: center; }
     .mockup-product-img {
       width: 100%; aspect-ratio: 1; background: rgba(255,255,255,.06);
-      border-radius: 2px; margin-bottom: .5rem; font-size: 1.4rem;
+      border-radius: 2px; margin-bottom: .5rem; font-size: 1.3rem;
       display: flex; align-items: center; justify-content: center;
     }
-    .mockup-product p { font-size: .6rem; color: rgba(255,255,255,.4); }
-    .tech-tags { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: 2rem; }
-    .tech-tag {
-      font-size: .68rem; letter-spacing: .12em; text-transform: uppercase;
-      padding: .35rem .9rem; border: 1px solid rgba(184,150,90,.4); border-radius: 2px;
-      color: var(--gold);
-    }
+    .mockup-product p { font-size: .58rem; color: rgba(255,255,255,.4); }
+    .mockup-product .price { color: var(--gold); font-size: .65rem; margin-top: .2rem; }
 
-    /* ── PROCESO ── */
-    #proceso { background: #fff; }
+    /* ── METODOLOGÍA ── */
+    #proceso { background: var(--cream); }
+    .proceso-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; }
     .timeline { position: relative; padding-left: 2rem; }
     .timeline::before {
       content: ''; position: absolute; left: 0; top: 0; bottom: 0;
       width: 1px; background: var(--border);
     }
-    .timeline-item { position: relative; padding: 0 0 3rem 2.5rem; }
+    .timeline-item { position: relative; padding: 0 0 2.5rem 2.5rem; }
     .timeline-item::before {
-      content: ''; position: absolute; left: -2rem; top: .35rem;
+      content: ''; position: absolute; left: -2rem; top: .4rem;
       width: 10px; height: 10px; border-radius: 50%;
-      background: var(--gold); border: 2px solid #fff;
+      background: var(--gold); border: 2px solid var(--cream);
       box-shadow: 0 0 0 2px var(--gold);
       transform: translateX(-4px);
     }
-    .timeline-num {
-      font-size: .65rem; letter-spacing: .25em; text-transform: uppercase;
-      color: var(--gold); margin-bottom: .4rem;
+    .timeline-num { font-size: .65rem; letter-spacing: .25em; text-transform: uppercase; color: var(--gold); margin-bottom: .4rem; }
+    .timeline-title { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 600; margin-bottom: .5rem; }
+    .timeline-desc { font-size: .88rem; color: var(--muted); }
+    .keywords-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .kw-card {
+      padding: 1.5rem; border: 1px solid var(--border); border-radius: 2px; background: #fff;
     }
-    .timeline-title {
-      font-family: 'Cormorant Garamond', serif; font-size: 1.3rem;
-      font-weight: 600; margin-bottom: .5rem;
-    }
-    .timeline-desc { font-size: .9rem; color: var(--muted); }
+    .kw-title { font-size: .75rem; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); margin-bottom: .6rem; }
+    .kw-def { font-size: .82rem; color: var(--muted); line-height: 1.6; }
 
     /* ── CTA ── */
-    #contacto {
-      background: var(--green); text-align: center;
-      padding: 7rem 2rem;
-    }
+    #contacto { background: var(--green); text-align: center; padding: 7rem 2rem; }
     #contacto .section-label { color: rgba(184,150,90,.8); }
     #contacto .section-title { color: #fff; }
-    #contacto p { color: rgba(255,255,255,.7); max-width: 480px; margin: 0 auto 2.5rem; font-size: .95rem; }
+    #contacto p { color: rgba(255,255,255,.7); max-width: 500px; margin: 0 auto 2.5rem; font-size: .95rem; }
     .cta-link {
       display: inline-block; padding: 1rem 2.8rem;
       background: var(--gold); color: #fff; border-radius: 2px;
@@ -281,39 +321,25 @@
 
     /* ── FOOTER ── */
     footer {
-      background: var(--dark); color: rgba(248,245,240,.4);
+      background: var(--dark); color: rgba(248,245,240,.35);
       text-align: center; padding: 2.2rem;
       font-size: .75rem; letter-spacing: .1em;
     }
     footer span { color: var(--gold); }
 
     /* ── ANIMATIONS ── */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(28px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes fadeDown {
-      from { opacity: 0; transform: translateY(-16px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes scrollDown {
-      0% { top: -100%; } 100% { top: 100%; }
-    }
-
-    /* Reveal on scroll */
-    .reveal {
-      opacity: 0; transform: translateY(32px);
-      transition: opacity .8s ease, transform .8s ease;
-    }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes fadeDown { from { opacity: 0; transform: translateY(-16px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes scrollDown { 0% { top: -100%; } 100% { top: 100%; } }
+    .reveal { opacity: 0; transform: translateY(32px); transition: opacity .8s ease, transform .8s ease; }
     .reveal.visible { opacity: 1; transform: translateY(0); }
 
     /* ── RESPONSIVE ── */
     @media (max-width: 768px) {
       nav { padding: 1.2rem 1.5rem; }
-      .nav-links { gap: 1.2rem; }
-      .about-grid, .web-layout { grid-template-columns: 1fr; gap: 2.5rem; }
-      .features-grid { grid-template-columns: 1fr; }
-      .about-visual { height: 220px; }
+      .nav-links { gap: 1rem; font-size: .65rem; }
+      .about-grid, .infra-grid, .web-layout, .proceso-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .team-grid, .obj-grid, .keywords-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -321,25 +347,31 @@
 
 <!-- NAVBAR -->
 <nav>
-  <a class="nav-logo" href="#">EcoTheShop</a>
+  <a class="nav-logo" href="#">EcoTechShop</a>
   <ul class="nav-links">
     <li><a href="#sobre">Proyecto</a></li>
+    <li><a href="#infra">Infraestructura</a></li>
     <li><a href="#objetivos">Objetivos</a></li>
     <li><a href="#web">La Web</a></li>
     <li><a href="#proceso">Proceso</a></li>
-    <li><a href="#contacto">Contacto</a></li>
   </ul>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
   <div>
-    <p class="hero-tag">Proyecto Final · Desarrollo Web</p>
-    <h1>Eco<em>The</em><br>Shop</h1>
-    <p class="hero-sub">Una tienda online sostenible creada desde cero. Diseño, desarrollo y experiencia de usuario pensados para un comercio responsable.</p>
+    <div class="hero-badge">Projecte de Desenvolupament · CFGS ASIX</div>
+    <h1>Eco<em>Tech</em><br>Shop</h1>
+    <p class="hero-author">Lorena Murcia — SMX 2A · Institut Puig Castellar</p>
+    <div class="hero-meta">
+      <div class="hero-meta-item">Centro<span>Institut Puig Castellar</span></div>
+      <div class="hero-meta-item">Ciclo<span>CFGS ASIX</span></div>
+      <div class="hero-meta-item">Tienda online<span>lmurcia.org</span></div>
+      <div class="hero-meta-item">Presupuesto<span>5.578 € (IVA inc.)</span></div>
+    </div>
     <div class="hero-btns">
-      <a href="#sobre" class="btn btn-primary">Descubrir el proyecto</a>
-      <a href="#web" class="btn btn-outline">Ver la web</a>
+      <a href="#sobre" class="btn btn-primary">Ver el proyecto</a>
+      <a href="http://lmurcia.org" target="_blank" class="btn btn-outline">Visitar lmurcia.org →</a>
     </div>
   </div>
   <div class="scroll-hint">
@@ -354,15 +386,110 @@
     <div class="about-grid reveal">
       <div class="about-text">
         <p class="section-label">Sobre el proyecto</p>
-        <h2 class="section-title">¿Qué es <em>EcoTheShop</em>?</h2>
+        <h2 class="section-title">¿Qué es <em>EcoTechShop</em>?</h2>
         <div class="divider"></div>
-        <p>EcoTheShop es mi proyecto final de desarrollo web: una tienda online dedicada a productos sostenibles y ecológicos. El objetivo ha sido diseñar y programar una experiencia de compra completa, funcional y atractiva.</p>
-        <p>Este proyecto nació de la voluntad de combinar dos pasiones: la tecnología web y el consumo responsable. Cada decisión de diseño y código se ha tomado pensando en el usuario y en el impacto medioambiental.</p>
-        <p>Desde la arquitectura del sitio hasta la paleta de colores, todo refleja los valores de la marca: naturaleza, calidad y transparencia.</p>
+        <p>EcoTechShop es una empresa de <strong>administración de redes e instalación de sistemas informáticos</strong>. La actividad principal se centra en la <strong>reparación de equipos</strong> (PCs, portátiles, NAS) y la <strong>venta de productos electrónicos</strong>, periféricos y presupuestos personalizados.</p>
+        <p>La infraestructura está compuesta por un <strong>router, un servidor y equipos cliente</strong>. El servidor proporciona los servicios necesarios para la red local (LAN): DHCP y DNS, gestionados íntegramente desde el propio servidor.</p>
+        <p>La tienda online está disponible en <strong>lmurcia.org</strong>, desarrollada con WordPress y WooCommerce, con sistema de pagos, copias de seguridad y gestión de productos.</p>
       </div>
-      <div class="about-visual">
-        <div class="about-visual-icon">🌿</div>
-        <div class="about-visual-text">Sostenible<br>por diseño</div>
+      <div>
+        <p style="font-size:.8rem; letter-spacing:.15em; text-transform:uppercase; color:var(--gold); margin-bottom:1.2rem;">Equipo — 4 socios</p>
+        <div class="team-grid">
+          <div class="team-card">
+            <div class="team-card-icon">🖥️</div>
+            <div class="team-card-title">Técnico informático</div>
+            <div class="team-card-desc">Mantenimiento de sistemas</div>
+          </div>
+          <div class="team-card">
+            <div class="team-card-icon">🔒</div>
+            <div class="team-card-title">Especialista en redes</div>
+            <div class="team-card-desc">Redes y seguridad</div>
+          </div>
+          <div class="team-card">
+            <div class="team-card-icon">🎨</div>
+            <div class="team-card-title">Diseñador gráfico</div>
+            <div class="team-card-desc">Imagen corporativa</div>
+          </div>
+          <div class="team-card">
+            <div class="team-card-icon">🛒</div>
+            <div class="team-card-title">Comercial online</div>
+            <div class="team-card-desc">Ventas y tienda virtual</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INFRAESTRUCTURA Y PRESUPUESTO -->
+<section id="infra">
+  <div class="container">
+    <div class="infra-grid reveal">
+      <div>
+        <p class="section-label">Red LAN</p>
+        <h2 class="section-title">Infraestructura <em>de red</em></h2>
+        <div class="divider"></div>
+        <p style="color:var(--muted); font-size:.92rem; margin-bottom:2rem;">La red LAN está compuesta por los siguientes dispositivos, configurados con IPs estáticas y servicios DHCP/DNS gestionados desde el servidor Ubuntu.</p>
+        <div class="infra-diagram">
+          <div class="diagram-title">Esquema de red</div>
+          <div class="diagram-nodes">
+            <div class="diagram-node">
+              <div class="diagram-node-icon">☁️</div>
+              <div class="diagram-node-info">
+                <div class="diagram-node-name">Internet</div>
+                <div class="diagram-node-ip">WAN</div>
+              </div>
+            </div>
+            <div class="diagram-arrow">↓</div>
+            <div class="diagram-node">
+              <div class="diagram-node-icon">📡</div>
+              <div class="diagram-node-info">
+                <div class="diagram-node-name">Router (Ubiquiti UDR)</div>
+                <div class="diagram-node-ip">192.168.123.1</div>
+              </div>
+            </div>
+            <div class="diagram-arrow">↓</div>
+            <div class="diagram-node">
+              <div class="diagram-node-icon">🖧</div>
+              <div class="diagram-node-info">
+                <div class="diagram-node-name">Servidor (HPE ProLiant)</div>
+                <div class="diagram-node-ip">192.168.123.111 · DHCP + DNS</div>
+              </div>
+            </div>
+            <div class="diagram-arrow">↓</div>
+            <div class="diagram-node" style="background:rgba(184,150,90,.08); border-color:rgba(184,150,90,.2);">
+              <div class="diagram-node-icon">💻</div>
+              <div class="diagram-node-info">
+                <div class="diagram-node-name">Cliente despacho</div>
+                <div class="diagram-node-ip">192.168.123.10</div>
+              </div>
+            </div>
+            <div class="diagram-node" style="background:rgba(184,150,90,.08); border-color:rgba(184,150,90,.2);">
+              <div class="diagram-node-icon">🧑‍💻</div>
+              <div class="diagram-node-info">
+                <div class="diagram-node-name">Cliente público</div>
+                <div class="diagram-node-ip">192.168.123.20</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <p style="font-size:.8rem; letter-spacing:.15em; text-transform:uppercase; color:var(--gold); margin-bottom:1.5rem;">Estudio de hardware y presupuesto</p>
+        <ul class="hardware-list">
+          <li><span class="hw-name">Cliente público (config. básica)</span><span class="hw-price">400 €</span></li>
+          <li><span class="hw-name">Cliente despacho (SFF i5, 16 GB)</span><span class="hw-price">700 €</span></li>
+          <li><span class="hw-name">Servidor (HPE ProLiant + 32 GB + discos)</span><span class="hw-price">1.800 €</span></li>
+          <li><span class="hw-name">Router (Ubiquiti UDR)</span><span class="hw-price">280 €</span></li>
+          <li><span class="hw-name">Switch 8p Gigabit (TP-Link)</span><span class="hw-price">70 €</span></li>
+          <li><span class="hw-name">Cable Cat6 + conectores + patch panel</span><span class="hw-price">80 €</span></li>
+          <li><span class="hw-name">Rack 6U mural</span><span class="hw-price">180 €</span></li>
+          <li><span class="hw-name">SAI / UPS APC 1500VA</span><span class="hw-price">1.100 €</span></li>
+        </ul>
+        <div class="hw-total">
+          <span>Total con IVA (21%)</span>
+          <span>5.578 €</span>
+        </div>
       </div>
     </div>
   </div>
@@ -373,39 +500,29 @@
   <div class="container">
     <div class="reveal">
       <p class="section-label">Objetivos del proyecto</p>
-      <h2 class="section-title">¿Qué quería <em>conseguir</em>?</h2>
+      <h2 class="section-title">¿Qué hemos <em>conseguido</em>?</h2>
       <div class="divider"></div>
     </div>
-    <div class="features-grid">
-      <div class="feature-card reveal">
-        <div class="feature-icon">🎨</div>
-        <div class="feature-title">Diseño profesional</div>
-        <p class="feature-desc">Crear una identidad visual coherente y atractiva que transmita los valores ecológicos de la tienda.</p>
+    <div class="obj-grid reveal">
+      <div class="obj-card">
+        <div class="obj-num">Objetivo 01</div>
+        <div class="obj-title">Montar la red LAN</div>
+        <p class="obj-desc">Configuración de una red local con equipo cliente (público y despacho), servidor HPE y router Ubiquiti, con IPs estáticas asignadas a cada dispositivo.</p>
       </div>
-      <div class="feature-card reveal">
-        <div class="feature-icon">🛒</div>
-        <div class="feature-title">Catálogo de productos</div>
-        <p class="feature-desc">Desarrollar una sección de productos clara, filtrable y fácil de navegar para el usuario.</p>
+      <div class="obj-card">
+        <div class="obj-num">Objetivo 02</div>
+        <div class="obj-title">Servicios DHCP y DNS</div>
+        <p class="obj-desc">Instalación y configuración del servidor isc-dhcp-server sobre Ubuntu. Asignación automática de IPs y resolución de nombres de dominio en la red local.</p>
       </div>
-      <div class="feature-card reveal">
-        <div class="feature-icon">📱</div>
-        <div class="feature-title">Diseño responsive</div>
-        <p class="feature-desc">Asegurar que la web funcione perfectamente en cualquier dispositivo: móvil, tablet y escritorio.</p>
+      <div class="obj-card">
+        <div class="obj-num">Objetivo 03</div>
+        <div class="obj-title">Tienda online funcional</div>
+        <p class="obj-desc">Desarrollo de lmurcia.org con WordPress y WooCommerce. Incluye catálogo de productos, sistema de pago y copias de seguridad automatizadas.</p>
       </div>
-      <div class="feature-card reveal">
-        <div class="feature-icon">⚡</div>
-        <div class="feature-title">Rendimiento</div>
-        <p class="feature-desc">Optimizar el código para que la página cargue rápido y ofrezca una experiencia fluida.</p>
-      </div>
-      <div class="feature-card reveal">
-        <div class="feature-icon">♿</div>
-        <div class="feature-title">Accesibilidad</div>
-        <p class="feature-desc">Construir una web inclusiva siguiendo buenas prácticas de accesibilidad web.</p>
-      </div>
-      <div class="feature-card reveal">
-        <div class="feature-icon">🌱</div>
-        <div class="feature-title">Mensaje ecológico</div>
-        <p class="feature-desc">Integrar el mensaje de sostenibilidad en cada elemento del sitio, desde el contenido hasta los colores.</p>
+      <div class="obj-card">
+        <div class="obj-num">Objetivo 04</div>
+        <div class="obj-title">Clonación de equipos</div>
+        <p class="obj-desc">Implementación de un sistema de clonación para facilitar el despliegue rápido de nuevas máquinas cliente dentro de la infraestructura de la empresa.</p>
       </div>
     </div>
   </div>
@@ -416,48 +533,55 @@
   <div class="container">
     <div class="web-layout reveal">
       <div>
-        <p class="section-label">La tienda online</p>
-        <h2 class="section-title">La web que <em>he creado</em></h2>
+        <p class="section-label">Tienda online</p>
+        <h2 class="section-title">La web <em>lmurcia.org</em></h2>
         <div class="divider" style="background:var(--gold)"></div>
+        <div class="web-url-box">
+          <span class="web-url-icon">🌐</span>
+          <a href="http://lmurcia.org" target="_blank">lmurcia.org</a>
+        </div>
         <div class="web-desc">
-          <p>EcoTheShop es una tienda online funcional donde los usuarios pueden explorar y descubrir productos ecológicos organizados por categorías.</p>
-          <p>La web incluye una página de inicio impactante, un catálogo de productos con imágenes, descripción y precio, y una experiencia de navegación intuitiva.</p>
-          <p>Todo el código está escrito con HTML, CSS y JavaScript, sin frameworks externos, demostrando el dominio de las tecnologías base del desarrollo web.</p>
+          <p>La tienda online de EcoTechShop está desarrollada con <strong style="color:var(--cream)">WordPress + WooCommerce</strong>. Permite a los clientes explorar y comprar productos electrónicos, periféricos y solicitar presupuestos personalizados.</p>
+          <p>El sitio incluye gestión de productos, sistema de pago integrado y copias de seguridad tanto del sitio web como del servidor, garantizando la continuidad del negocio.</p>
+          <p>Toda la infraestructura corre sobre el <strong style="color:var(--cream)">servidor HPE ProLiant</strong> con Ubuntu Server, configurado con DHCP, DNS y SSH para administración remota segura.</p>
         </div>
         <div class="tech-tags">
-          <span class="tech-tag">HTML5</span>
-          <span class="tech-tag">CSS3</span>
-          <span class="tech-tag">JavaScript</span>
-          <span class="tech-tag">Responsive</span>
-          <span class="tech-tag">Git</span>
+          <span class="tech-tag">WordPress</span>
+          <span class="tech-tag">WooCommerce</span>
+          <span class="tech-tag">Ubuntu Server</span>
+          <span class="tech-tag">SSH</span>
+          <span class="tech-tag">DHCP</span>
+          <span class="tech-tag">DNS</span>
+          <span class="tech-tag">Netplan</span>
         </div>
       </div>
-      <div>
-        <div class="mockup-bar web-mockup">
-          <div class="mockup-bar">
-            <div class="mockup-dot"></div>
-            <div class="mockup-dot"></div>
-            <div class="mockup-dot"></div>
-            <div class="mockup-url">ecotheshop.com</div>
+      <div class="mockup">
+        <div class="mockup-bar">
+          <div class="mockup-dot"></div>
+          <div class="mockup-dot"></div>
+          <div class="mockup-dot"></div>
+          <div class="mockup-url-bar">lmurcia.org</div>
+        </div>
+        <div class="mockup-body">
+          <div class="mockup-hero-sim">
+            <h3>🖥️ EcoTechShop</h3>
+            <p>Reparación y venta de productos electrónicos</p>
           </div>
-          <div class="mockup-body">
-            <div class="mockup-hero-sim">
-              <h3>🌿 EcoTheShop</h3>
-              <p>Productos sostenibles para un mundo mejor</p>
+          <div class="mockup-products">
+            <div class="mockup-product">
+              <div class="mockup-product-img">💻</div>
+              <p>Portátil</p>
+              <p class="price">desde 399€</p>
             </div>
-            <div class="mockup-products">
-              <div class="mockup-product">
-                <div class="mockup-product-img">🧴</div>
-                <p>Jabón natural</p>
-              </div>
-              <div class="mockup-product">
-                <div class="mockup-product-img">🌿</div>
-                <p>Aceite orgánico</p>
-              </div>
-              <div class="mockup-product">
-                <div class="mockup-product-img">♻️</div>
-                <p>Bolsa reutilizable</p>
-              </div>
+            <div class="mockup-product">
+              <div class="mockup-product-img">🖱️</div>
+              <p>Periféricos</p>
+              <p class="price">desde 19€</p>
+            </div>
+            <div class="mockup-product">
+              <div class="mockup-product-img">🔧</div>
+              <p>Reparación</p>
+              <p class="price">presupuesto</p>
             </div>
           </div>
         </div>
@@ -466,36 +590,61 @@
   </div>
 </section>
 
-<!-- PROCESO -->
+<!-- PROCESO Y PALABRAS CLAVE -->
 <section id="proceso">
   <div class="container">
-    <div style="display:grid; grid-template-columns:1fr 1fr; gap:5rem; align-items:start" class="reveal">
-      <div>
-        <p class="section-label">Metodología</p>
-        <h2 class="section-title">El <em>proceso</em> de trabajo</h2>
-        <div class="divider"></div>
-        <p style="color:var(--muted); font-size:.95rem">Cada fase del proyecto se ha planificado y ejecutado de forma ordenada para garantizar un resultado profesional y coherente.</p>
-      </div>
+    <div class="reveal" style="margin-bottom:3rem;">
+      <p class="section-label">Metodología de trabajo</p>
+      <h2 class="section-title">Fases del <em>proyecto</em></h2>
+      <div class="divider"></div>
+    </div>
+    <div class="proceso-grid reveal">
       <div class="timeline">
         <div class="timeline-item">
           <div class="timeline-num">Fase 01</div>
-          <div class="timeline-title">Investigación y planificación</div>
-          <p class="timeline-desc">Análisis del mercado eco, definición del público objetivo y estructura de la web.</p>
+          <div class="timeline-title">Análisis de hardware</div>
+          <p class="timeline-desc">Estudio comparativo del hardware disponible y elaboración del presupuesto (4.610 € sin IVA / 5.578 € con IVA).</p>
         </div>
         <div class="timeline-item">
           <div class="timeline-num">Fase 02</div>
-          <div class="timeline-title">Diseño y prototipo</div>
-          <p class="timeline-desc">Creación de la identidad visual, paleta de colores, tipografía y wireframes.</p>
+          <div class="timeline-title">Diseño de la red LAN</div>
+          <p class="timeline-desc">Diseño del esquema de red, asignación de IPs estáticas (192.168.123.x) y configuración de interfaces con Netplan.</p>
         </div>
         <div class="timeline-item">
           <div class="timeline-num">Fase 03</div>
-          <div class="timeline-title">Desarrollo</div>
-          <p class="timeline-desc">Programación de todas las páginas con HTML, CSS y JavaScript. Control de versiones con Git.</p>
+          <div class="timeline-title">Instalación y configuración</div>
+          <p class="timeline-desc">Instalación de máquinas virtuales, configuración del router (OpenWRT / Ubuntu), servidor DHCP, DNS, NAT y SSH.</p>
         </div>
         <div class="timeline-item">
           <div class="timeline-num">Fase 04</div>
-          <div class="timeline-title">Revisión y publicación</div>
-          <p class="timeline-desc">Pruebas de usabilidad, ajustes finales y despliegue del proyecto en línea.</p>
+          <div class="timeline-title">Desarrollo de la tienda</div>
+          <p class="timeline-desc">Creación de lmurcia.org con WordPress y WooCommerce, configuración de productos y sistema de pago.</p>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-num">Fase 05</div>
+          <div class="timeline-title">Copias de seguridad</div>
+          <p class="timeline-desc">Implementación de backups automáticos tanto del servidor como de la página web para garantizar la continuidad.</p>
+        </div>
+      </div>
+      <div>
+        <p style="font-size:.8rem; letter-spacing:.15em; text-transform:uppercase; color:var(--gold); margin-bottom:1.5rem;">Paraules clau / Glosario técnico</p>
+        <div class="keywords-grid">
+          <div class="kw-card">
+            <div class="kw-title">DHCP</div>
+            <p class="kw-def">Protocolo que asigna automáticamente IPs y parámetros de red a los dispositivos clientes. Gestionado desde el servidor con isc-dhcp-server.</p>
+          </div>
+          <div class="kw-card">
+            <div class="kw-title">DNS</div>
+            <p class="kw-def">Sistema de nombres de dominio jerárquico que traduce nombres de host a IPs, garantizando el acceso rápido a los servicios de red.</p>
+          </div>
+          <div class="kw-card">
+            <div class="kw-title">SSH</div>
+            <p class="kw-def">Protocolo de red que permite administración remota segura mediante conexiones cifradas entre el cliente y el servidor.</p>
+          </div>
+          <div class="kw-card">
+            <div class="kw-title">WordPress</div>
+            <p class="kw-def">CMS utilizado para desarrollar lmurcia.org. Con plugins como WooCommerce permite crear tiendas online completas y personalizables.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -506,21 +655,20 @@
 <section id="contacto">
   <div class="container">
     <div class="reveal">
-      <p class="section-label">¿Quieres verla en acción?</p>
-      <h2 class="section-title">Visita la tienda<br><em>EcoTheShop</em></h2>
-      <p>Este proyecto representa todo lo aprendido durante el curso. Espero que refleje el esfuerzo, la creatividad y la pasión que he puesto en cada línea de código.</p>
-      <a href="#" class="cta-link">Visitar EcoTheShop →</a>
+      <p class="section-label">Tienda online</p>
+      <h2 class="section-title">Visita la tienda<br><em>lmurcia.org</em></h2>
+      <p>EcoTechShop ofrece reparación de equipos, venta de productos electrónicos y periféricos. Todo gestionado desde una infraestructura de red propia configurada de cero en este proyecto.</p>
+      <a href="http://lmurcia.org" target="_blank" class="cta-link">Visitar lmurcia.org →</a>
     </div>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-  Proyecto Final — <span>EcoTheShop</span> · Hecho con 🌿 y HTML & CSS
+  <strong style="color:rgba(248,245,240,.6)">EcoTechShop</strong> · Proyecto Final CFGS ASIX · <span>Lorena Murcia</span> · Institut Puig Castellar, Santa Coloma de Gramenet · 2025
 </footer>
 
 <script>
-  // Scroll reveal
   const reveals = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver(entries => {
     entries.forEach((entry, i) => {
@@ -528,7 +676,7 @@
         setTimeout(() => entry.target.classList.add('visible'), i * 80);
       }
     });
-  }, { threshold: 0.12 });
+  }, { threshold: 0.1 });
   reveals.forEach(el => observer.observe(el));
 </script>
 
